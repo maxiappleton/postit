@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="span8 well">
+    <%= render post.categories %>
+
+    <h4><%= link_to post.title, post_path(post) %></h4>
+    <p><%= post.description %></p>
+    <strong>Link: <%= link_to post.url, fix_url(post.url) %></strong>
+    <p>
+      <% if post.user %>
+        <span class="quiet">posted by</span> <%= post.user.username %>
+      <% else %>
+        <span class="quiet">posted by</span> Anonymous
+      <% end %>
+      
+      <small>at <%= display_datetime(post.created_at) %></small>
+    </p>
+    <small><span><%= link_to("#{post.comments.size} comments", post_path(post)) %></span></small>
+    <small><span><%= link_to "*edit*", edit_post_path(post) %></span></small>
+  </div>
+</div>

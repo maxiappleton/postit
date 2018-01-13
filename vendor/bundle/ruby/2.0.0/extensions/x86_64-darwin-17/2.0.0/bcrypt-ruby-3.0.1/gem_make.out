@@ -1,0 +1,63 @@
+current directory: /Users/Max/Desktop/Launch_School/Frameworks/301_rails/lesson_1/postit/vendor/bundle/ruby/2.0.0/gems/bcrypt-ruby-3.0.1/ext/mri
+/Users/Max/.rvm/rubies/ruby-2.0.0-p648/bin/ruby -r ./siteconf20180113-23534-122pz94.rb extconf.rb
+creating Makefile
+
+current directory: /Users/Max/Desktop/Launch_School/Frameworks/301_rails/lesson_1/postit/vendor/bundle/ruby/2.0.0/gems/bcrypt-ruby-3.0.1/ext/mri
+make "DESTDIR=" clean
+
+current directory: /Users/Max/Desktop/Launch_School/Frameworks/301_rails/lesson_1/postit/vendor/bundle/ruby/2.0.0/gems/bcrypt-ruby-3.0.1/ext/mri
+make "DESTDIR="
+compiling crypt_gensalt.c
+compiling crypt.c
+crypt.c:15:26: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+      NIL_P(input) ? 0 : RSTRING_LEN(input));
+                         ^~~~~~~~~~~~~~~~~~
+/Users/Max/.rvm/rubies/ruby-2.0.0-p648/include/ruby-2.0.0/ruby/ruby.h:864:6: note: expanded from macro 'RSTRING_LEN'
+     RSTRING_EMBED_LEN(str) : \
+     ^~~~~~~~~~~~~~~~~~~~~~
+/Users/Max/.rvm/rubies/ruby-2.0.0-p648/include/ruby-2.0.0/ruby/ruby.h:860:6: note: expanded from macro 'RSTRING_EMBED_LEN'
+     (long)((RBASIC(str)->flags >> RSTRING_EMBED_LEN_SHIFT) & \
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+crypt.c:15:26: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+      NIL_P(input) ? 0 : RSTRING_LEN(input));
+                         ^~~~~~~~~~~~~~~~~~
+/Users/Max/.rvm/rubies/ruby-2.0.0-p648/include/ruby-2.0.0/ruby/ruby.h:865:28: note: expanded from macro 'RSTRING_LEN'
+     RSTRING(str)->as.heap.len)
+     ~~~~~~~~~~~~~~~~~~~~~~^~~
+2 warnings generated.
+compiling bcrypt_ext.c
+bcrypt_ext.c:27:19: warning: implicit declaration of function 'ruby_bcrypt' is invalid in C99 [-Wimplicit-function-declaration]
+    return (VALUE)ruby_bcrypt(args->output, args->key, args->salt);
+                  ^
+bcrypt_ext.c:42:25: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+            NIL_P(input) ? 0 : RSTRING_LEN(input));
+                               ^~~~~~~~~~~~~~~~~~
+/Users/Max/.rvm/rubies/ruby-2.0.0-p648/include/ruby-2.0.0/ruby/ruby.h:864:6: note: expanded from macro 'RSTRING_LEN'
+     RSTRING_EMBED_LEN(str) : \
+     ^~~~~~~~~~~~~~~~~~~~~~
+/Users/Max/.rvm/rubies/ruby-2.0.0-p648/include/ruby-2.0.0/ruby/ruby.h:860:6: note: expanded from macro 'RSTRING_EMBED_LEN'
+     (long)((RBASIC(str)->flags >> RSTRING_EMBED_LEN_SHIFT) & \
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bcrypt_ext.c:42:25: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+            NIL_P(input) ? 0 : RSTRING_LEN(input));
+                               ^~~~~~~~~~~~~~~~~~
+/Users/Max/.rvm/rubies/ruby-2.0.0-p648/include/ruby-2.0.0/ruby/ruby.h:865:28: note: expanded from macro 'RSTRING_LEN'
+     RSTRING(str)->as.heap.len)
+     ~~~~~~~~~~~~~~~~~~~~~~^~~
+bcrypt_ext.c:25:14: warning: unused function 'bcrypt_wrapper' [-Wunused-function]
+static VALUE bcrypt_wrapper(void *_args) {
+             ^
+4 warnings generated.
+compiling wrapper.c
+In file included from wrapper.c:27:
+/Users/Max/.rvm/rubies/ruby-2.0.0-p648/include/ruby-2.0.0/ruby/backward/util.h:2:2: warning: use "ruby/util.h" instead of bare "util.h" [-W#warnings]
+#warning use "ruby/util.h" instead of bare "util.h"
+ ^
+1 warning generated.
+compiling crypt_blowfish.c
+linking shared-object bcrypt_ext.bundle
+
+current directory: /Users/Max/Desktop/Launch_School/Frameworks/301_rails/lesson_1/postit/vendor/bundle/ruby/2.0.0/gems/bcrypt-ruby-3.0.1/ext/mri
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 bcrypt_ext.bundle ./.gem.20180113-23534-37m9a0
+installing default bcrypt_ext libraries

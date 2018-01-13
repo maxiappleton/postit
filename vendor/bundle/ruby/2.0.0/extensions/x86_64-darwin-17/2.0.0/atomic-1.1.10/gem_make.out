@@ -1,0 +1,20 @@
+current directory: /Users/Max/Desktop/Launch_School/Frameworks/301_rails/lesson_1/postit/vendor/bundle/ruby/2.0.0/gems/atomic-1.1.10/ext
+/Users/Max/.rvm/rubies/ruby-2.0.0-p648/bin/ruby -r ./siteconf20180113-23534-1w70n7x.rb extconf.rb
+creating Makefile
+
+current directory: /Users/Max/Desktop/Launch_School/Frameworks/301_rails/lesson_1/postit/vendor/bundle/ruby/2.0.0/gems/atomic-1.1.10/ext
+make "DESTDIR=" clean
+
+current directory: /Users/Max/Desktop/Launch_School/Frameworks/301_rails/lesson_1/postit/vendor/bundle/ruby/2.0.0/gems/atomic-1.1.10/ext
+make "DESTDIR="
+compiling atomic_reference.c
+atomic_reference.c:50:9: warning: implicit declaration of function 'OSAtomicCompareAndSwap64' is invalid in C99 [-Wimplicit-function-declaration]
+    if (OSAtomicCompareAndSwap64(expect_value, new_value, &DATA_PTR(self))) {
+        ^
+1 warning generated.
+linking shared-object atomic_reference.bundle
+
+current directory: /Users/Max/Desktop/Launch_School/Frameworks/301_rails/lesson_1/postit/vendor/bundle/ruby/2.0.0/gems/atomic-1.1.10/ext
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 atomic_reference.bundle ./.gem.20180113-23534-1jtgq04
+installing default atomic_reference libraries

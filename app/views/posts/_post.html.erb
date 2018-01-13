@@ -1,4 +1,15 @@
 <div class="row">
+  <div class="span0 well text-center">
+    <%= link_to vote_post_path(post, vote: true), method: 'post' do %>
+      <i class="icon-arrow-up"></i>
+    <% end %>
+    <br>
+    <%= post.total_votes %> votes
+    <br>
+    <%= link_to vote_post_path(post, vote: false), method: 'post' do %>
+      <i class="icon-arrow-down"></i>
+    <% end %>
+  </div>
   <div class="span8 well">
     <%= render post.categories %>
 
@@ -6,12 +17,7 @@
     <p><%= post.description %></p>
     <strong>Link: <%= link_to post.url, fix_url(post.url) %></strong>
     <p>
-      <% if post.user %>
-        <span class="quiet">posted by</span> <%= post.user.username %>
-      <% else %>
-        <span class="quiet">posted by</span> Anonymous
-      <% end %>
-      
+      <span class="quiet">posted by</span> <%= link_to post.user.username, user_path(post.user) %>
       <small>at <%= display_datetime(post.created_at) %></small>
     </p>
     <small><span><%= link_to("#{post.comments.size} comments", post_path(post)) %></span></small>

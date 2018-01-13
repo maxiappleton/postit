@@ -1,6 +1,8 @@
-<p class="pull-right">
-  [<%= link_to 'Edit this post', edit_post_path(@post) %>]
-</p>
+<% if logged_in? %>
+  <p class="pull-right">
+    [<%= link_to 'Edit this post', edit_post_path(@post) %>]
+  </p>
+<% end %>
 
 <p><%= render @post.categories %></p>
 
@@ -10,25 +12,18 @@
 
 <hr>
 
-<%= form_for [@post, @comment] do |f| %>
-  <%= render 'shared/form_error_alerts', obj: @comment %>
-  <%= f.label :body, 'Leave A Comment:' %>
-  <%= f.text_area :body, rows: 3, class: 'span4' %>
-  <br>
-  <%= f.submit 'Create Comment', class: 'btn btn-primary' %>
+<% if logged_in? %>
+  <%= form_for [@post, @comment] do |f| %>
+    <%= render 'shared/form_error_alerts', obj: @comment %>
+    <%= f.label :body, 'Leave A Comment:' %>
+    <%= f.text_area :body, rows: 3, class: 'span4' %>
+    <br>
+    <%= f.submit 'Create Comment', class: 'btn btn-primary' %>
+  <% end %>
+  <hr>
 <% end %>
-
-<hr>
 
 <h5>Comments:</h5>
 <% @post.comments.each do |c| %>
-  <div class="row">
-    <div class="span8 well">
-      <p><%= c.body %></p>
-      <p>
-        <span class="quiet">posted by</span> <%= link_to c.user.username, '' %>
-        <small>at <%= display_datetime(c.created_at) %></small>
-      </p>
-    </div>
-  </div>
+  <%= render 'comment', comment: c %>
 <% end %>

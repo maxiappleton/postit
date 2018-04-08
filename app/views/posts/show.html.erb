@@ -24,6 +24,6 @@
 <% end %>
 
 <h5>Comments:</h5>
-<% @post.comments.each do |c| %>
-  <%= render 'comment', comment: c %>
+<% @post.reload.comments.each do |c| %>
+  <%= render 'posts/comment', comment: c %>
 <% end %>
